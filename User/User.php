@@ -3,6 +3,7 @@
       private $name;
       private $mail;
       private $phone;
+      private $cardDetails;
       private $discount = 0;
 
       /**
@@ -84,5 +85,34 @@
 
             return $this;
       }
+
+      /**
+       * Get the value of cardDetails
+       */ 
+      public function getCardDetails()
+      {
+            return $this->cardDetails;
+      }
+
+      /**
+       * Set the value of cardDetails
+       *
+       * @return  self
+       */ 
+      public function setCardDetails($_cardDetails)
+      {
+         if ($_cardDetails < date("m/Y")) {
+            echo '<h1>card expired</h1>';
+         } else {
+            $this->cardDetails = $_cardDetails;
+            var_dump($this);
+         }
+
+            return $this;
+      }
    }
+
+   $card = new User;
+
+   $card->setCardDetails("5/2050")
 ?>
