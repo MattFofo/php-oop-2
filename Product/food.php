@@ -6,7 +6,7 @@
       private $expiring;
       private $noGlucosio;
 
-      public function __construct(string $_name, float $_price, int $weight)
+      public function __construct(string $_name, float $_price)
       {
          return [
             $this->name = $_name,
@@ -76,7 +76,7 @@
       }
    }
 
-   $obj = new Food('deluxeFoody', 24.80, 15); 
-   $obj->setPrice(22);
-   var_dump($obj)
+   // $obj = new Food('deluxeFoody', 24.80, 15); 
+   // $obj->setPrice(22);
+   // var_dump($obj)
 ?>

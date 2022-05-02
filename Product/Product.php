@@ -1,4 +1,8 @@
 <?php
+include_once __DIR__ . '/food.php';
+include_once __DIR__ . '/toy.php';
+include_once __DIR__ . '/home.php';
+include_once __DIR__ . '/health.php';
 
 abstract class Product {
    protected $name;
