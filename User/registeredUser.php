@@ -4,6 +4,6 @@
    class RegisteredUser extends User {
       private $userName;
       private $password;
-      private $discount;
+      private $discount = 20;
    }
 ?>
