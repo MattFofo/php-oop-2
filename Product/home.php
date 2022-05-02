@@ -2,9 +2,7 @@
    include_once __DIR__ . '/Product.php';
 
    class Home extends Product {
-      private $animalType;
-      private $expiring;
-      private $description;
+      private $dimensions;
 
       public function __construct($_name, float $_price)
       {
@@ -14,62 +12,23 @@
          ];
       }
 
+
       /**
-       * Get the value of animalType
+       * Get the value of dimensions
        */ 
-      public function getAnimalType()
+      public function getDimensions()
       {
-            return $this->animalType;
+            return $this->dimensions;
       }
 
       /**
-       * Set the value of animalType
+       * Set the value of dimensions
        *
        * @return  self
        */ 
-      public function setAnimalType($animalType)
+      public function setDimensions($dimensions)
       {
-            $this->animalType = $animalType;
-
-            return $this;
-      }
-
-      /**
-       * Get the value of expiring
-       */ 
-      public function getExpiring()
-      {
-            return $this->expiring;
-      }
-
-      /**
-       * Set the value of expiring
-       *
-       * @return  self
-       */ 
-      public function setExpiring($expiring)
-      {
-            $this->expiring = $expiring;
-
-            return $this;
-      }
-
-      /**
-       * Get the value of description
-       */ 
-      public function getDescription()
-      {
-            return $this->description;
-      }
-
-      /**
-       * Set the value of description
-       *
-       * @return  self
-       */ 
-      public function setDescription($description)
-      {
-            $this->description = $description;
+            $this->dimensions = $dimensions;
 
             return $this;
       }

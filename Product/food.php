@@ -2,11 +2,11 @@
    include_once __DIR__ . '/Product.php';
 
    class Food extends Product {
-      private $animalType;
+      private $weight;
       private $expiring;
-      private $description;
+      private $noGlucosio;
 
-      public function __construct($_name, float $_price)
+      public function __construct(string $_name, float $_price, int $weight)
       {
          return [
             $this->name = $_name,
@@ -14,22 +14,23 @@
          ];
       }
 
+
       /**
-       * Get the value of animalType
+       * Get the value of weight
        */ 
-      public function getAnimalType()
+      public function getWeight()
       {
-            return $this->animalType;
+            return $this->weight;
       }
 
       /**
-       * Set the value of animalType
+       * Set the value of weight
        *
        * @return  self
        */ 
-      public function setAnimalType($animalType)
+      public function setWeight($weight)
       {
-            $this->animalType = $animalType;
+            $this->weight = $weight;
 
             return $this;
       }
@@ -55,27 +56,27 @@
       }
 
       /**
-       * Get the value of description
+       * Get the value of noGlucosio
        */ 
-      public function getDescription()
+      public function getNoGlucosio()
       {
-            return $this->description;
+            return $this->noGlucosio;
       }
 
       /**
-       * Set the value of description
+       * Set the value of noGlucosio
        *
        * @return  self
        */ 
-      public function setDescription($description)
+      public function setNoGlucosio($noGlucosio)
       {
-            $this->description = $description;
+            $this->noGlucosio = $noGlucosio;
 
             return $this;
       }
    }
 
-   $obj = new Food('deluxeFoody', 24.80); 
+   $obj = new Food('deluxeFoody', 24.80, 15); 
    $obj->setPrice(22);
    var_dump($obj)
 ?>
