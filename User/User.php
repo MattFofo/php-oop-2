@@ -1,10 +1,13 @@
-<?php 
+<?php
+
+   include_once __DIR__ . '/../Order.php';
    class User {
       private $name;
       private $mail;
       private $phone;
-      private $cardDetails;
-      private $discount = 0;
+      private $address;
+      private $cardExpiration;
+      protected $discount = 0;
 
       /**
        * Get the value of name
@@ -89,9 +92,9 @@
       /**
        * Get the value of cardDetails
        */ 
-      public function getCardDetails()
+      public function getCardExpiration()
       {
-            return $this->cardDetails;
+            return $this->cardExpiration;
       }
 
       /**
@@ -99,20 +102,48 @@
        *
        * @return  self
        */ 
-      public function setCardDetails($_cardDetails)
+      public function setCardExpiration($_cardExpiration)
       {
-         if ($_cardDetails < date("m/Y")) {
+         if ($_cardExpiration < date("m/Y")) {
             echo '<h1>card expired</h1>';
          } else {
-            $this->cardDetails = $_cardDetails;
+            $this->cardExpiration = $_cardExpiration;
             var_dump($this);
          }
 
+         return $this;
+      }
+
+      /**
+       * Get the value of address
+       */ 
+      public function getAddress()
+      {
+            return $this->address;
+      }
+
+      /**
+       * Set the value of address
+       *
+       * @return  self
+       */ 
+      public function setAddress($address)
+      {
+            $this->address = $address;
+
             return $this;
+      }
+
+      public function setOrder(CreditCard $_creditCard, $_productList)
+      {
+         $order = new Order($this, $_creditCard, $_productList);
+
+         return $order;
       }
    }
 
    $card = new User;
 
-   $card->setCardDetails("5/2050")
+   $card->setCardExpiration("5/2050")
+
 ?>
